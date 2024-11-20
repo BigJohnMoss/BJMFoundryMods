@@ -18,7 +18,7 @@ Hooks.once('init', () => {
     }
   });
 
-  Hooks.on('renderSidebarTab', (app, html) => {
+  Hooks.on('sidebar', (app, html) => {
     // Check if the tab being rendered is the Actors Directory
     if (app.options.id === "actors") {
       // Create a new button element
