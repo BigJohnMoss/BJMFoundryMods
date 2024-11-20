@@ -1,0 +1,18 @@
+{
+  "id": "waitscreenupgrademodule",
+  "title": "Wait Screen Upgrade Module",
+  "version": "1.0.0",
+  "compatibility": {
+    "minimum": "11",
+    "verified": "12"
+  },
+  "description": "A module to enhance the wait screen experience.",
+  "authors": [
+    {
+      "name": "BigJohnMoss"
+    }
+  ],
+  "url": "https://github.com/BigJohnMoss/BJMFoundryMods",
+  "manifest": "https://raw.githubusercontent.com/BigJohnMoss/BJMFoundryMods/main/WaitScreenUpgradeModule/waitscreenupgrademodule.json",
+  "download": "https://raw.githubusercontent.com/BigJohnMoss/BJMFoundryMods/main/WaitScreenUpgradeModule.zip"
+}
