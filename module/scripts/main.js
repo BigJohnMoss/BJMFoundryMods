@@ -1,4 +1,4 @@
-
+console.log("Main.js is loaded and running");
   // Initialization hook
 Hooks.once('init', () => {
     console.log("Wait Screen Upgrade Module | Initialized");
