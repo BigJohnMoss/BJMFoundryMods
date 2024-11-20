@@ -54,24 +54,21 @@ Hooks.once('init', () => {
     }
 }
 
-// Add a button to the game settings for the GM to open this page
 Hooks.on("getSceneControlButtons", (controls) => {
-  console.log('module | getSceneControlButtons hook fired');
-  // Only add the button for GMs
-  if (!game.user.isGM) return;
+  console.log("module | Adding Scene Updater button to scene controls");
 
-  // Add the button to the scene controls
-  controls.push({
-      name: "scene-updater",
-      title: "Open Scene Updater",
-      icon: "fa-solid fa-pencil-alt",
-      onClick: () => {
-          new SceneUpdater().render(true); // Opens the SceneUpdater application
-      },
-      button: true,
-  });
+  // Add a new control for GMs
+  if (game.user.isGM) {
+      controls.push({
+          name: "scene-updater",
+          title: "Scene Updater",
+          icon: "fas fa-pencil-alt",
+          layer: "controls", // Optional: Specify the layer
+          tools: [], // Even if not used, ensure "tools" exists
+          onClick: () => {
+              new SceneUpdater().render(true);
+          },
+          button: true,
+      });
+  }
 });
-
-
-  
-  
