@@ -6,23 +6,24 @@
     padding: 20px;
   }
 
-  .my-module-button {
-    background-color: #007bff;
-    color: white;
+  .wait-screen-shop {
+    text-align: center;
+  }
+  
+  .wait-screen-shop h2 {
+    color: var(--primary);
+  }
+  
+  .shop-button {
+    background: var(--secondary);
+    color: rgb(255, 255, 255);
     border: none;
     border-radius: 5px;
-    padding: 8px 12px;
-    font-size: 14px;
+    padding: 10px 20px;
     cursor: pointer;
-    display: inline-flex;
-    align-items: center;
   }
   
-  .my-module-button:hover {
-    background-color: #0056b3;
-  }
-  
-  .my-module-button i {
-    margin-right: 5px;
+  .shop-button:hover {
+    background: var(--secondary-dark);
   }
   

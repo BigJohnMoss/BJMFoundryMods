@@ -4,6 +4,10 @@ console.log('module | Main.js is loaded and running');
 Hooks.once('init', () => {
     console.log("module | Initialized");
   });
+
+  Hooks.once("init", () => {
+    loadTemplates(["module/templates/wait-screen-shop.html"]);
+  });
   
   // Ready hook
   Hooks.on('ready', () => {
@@ -18,30 +22,38 @@ Hooks.once('init', () => {
     }
   });
 
-  Hooks.on('renderSettingsConfig', (app, html) => {
-    // Select the target container
-    const settingsGameContainer = html.find('#settings-game');
-  
-    // Check if the container exists
-    if (settingsGameContainer.length > 0) {
-      // Ensure no duplicate buttons
-      if (settingsGameContainer.find('.my-module-button').length === 0) {
-        // Create a new button element
-        const button = $(`
-          <button class="my-module-button" data-action="my-action">
-            <i class="fas fa-star"></i> My Custom Button
-          </button>
-        `);
-  
-        // Add a click listener for the button
-        button.on('click', () => {
-          ui.notifications.info("My Custom Button was clicked!");
-          // Add your custom functionality here
-        });
-  
-        // Append the button to the settings container
-        settingsGameContainer.append(button);
-      }
+  class WaitScreenShopApp extends Application {
+    static get defaultOptions() {
+      return mergeObject(super.defaultOptions, {
+        id: "wait-screen-shop",
+        title: "Wait Screen Shop",
+        template: "modules/your-module-name/templates/wait-screen-shop.html", // Path to your HTML template
+        width: 400,
+        height: 300,
+        resizable: true
+      });
     }
+  
+    // Optionally, add data or methods for rendering dynamic content
+    getData() {
+      return {
+        message: "Welcome to the Wait Screen Shop!"
+      };
+    }
+  }
+
+  Hooks.on('getSceneControlButtons', (controls) => {
+    controls.push({
+      name: "wait-screen-shop",
+      title: "Wait Screen Shop",
+      icon: "fas fa-shopping-cart", // Icon for the button
+      layer: "controls",
+      visible: game.user.isGM, // Make it visible only for GMs (optional)
+      onClick: () => {
+        // Open the custom pop-up when clicked
+        new WaitScreenShopApp().render(true);
+      },
+      button: true
+    });
   });
   
