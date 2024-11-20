@@ -1,19 +1,20 @@
 console.log("Main.js is loaded and running");
+console.log('module | Main.js is loaded and running');
   // Initialization hook
 Hooks.once('init', () => {
-    console.log("Wait Screen Upgrade Module | Initialized");
+    console.log("module | Initialized");
   });
   
   // Ready hook
   Hooks.on('ready', () => {
-    console.log("Wait Screen Upgrade Module | Ready");
+    console.log("module | Ready");
     ui.notifications.info("Welcome to the upgraded wait screen!");
   });
   
   // Example: Display a custom message on the canvas
   Hooks.on('canvasReady', (canvas) => {
     if (canvas.scene) {
-      console.log(`Wait Screen Upgrade Module | Scene Loaded: ${canvas.scene.name}`);
+      console.log(`module | Scene Loaded: ${canvas.scene.name}`);
     }
   });
 
@@ -55,7 +56,7 @@ Hooks.once('init', () => {
 
 // Add a button to the game settings for the GM to open this page
 Hooks.on("getSceneControlButtons", (controls) => {
-  console.log("Adding Scene Updater button to scene controls");
+  console.log('module | getSceneControlButtons hook fired');
   // Only add the button for GMs
   if (!game.user.isGM) return;
 
