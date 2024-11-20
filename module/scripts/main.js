@@ -55,18 +55,21 @@ Hooks.once('init', () => {
 
 // Add a button to the game settings for the GM to open this page
 Hooks.on("getSceneControlButtons", (controls) => {
-    if (!game.user.isGM) return;
+  // Only add the button for GMs
+  if (!game.user.isGM) return;
 
-    controls.push({
-        name: "scene-updater",
-        title: "Open Scene Updater",
-        icon: "fas fa-pencil-alt",
-        onClick: () => {
-            new SceneUpdater().render(true);
-        },
-        button: true,
-    });
+  // Add the button to the scene controls
+  controls.push({
+      name: "scene-updater",
+      title: "Open Scene Updater",
+      icon: "fa-solid fa-pencil-alt",
+      onClick: () => {
+          new SceneUpdater().render(true); // Opens the SceneUpdater application
+      },
+      button: true,
+  });
 });
+
 
   
   
