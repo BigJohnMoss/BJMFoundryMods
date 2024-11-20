@@ -11,6 +11,6 @@
   "languages": [],
   "packs": [],
   "url": "https://github.com/BigJohnMoss/BJMFoundryMods.git",
-  "manifest": "https://github.com/your-repo/waitscreenupgrademodule.json",
-  "download": "https://github.com/your-repo/releases/latest"
+  "manifest": "https://github.com/BigJohnMoss/BJMFoundryMods/waitscreenupgrademodule.json",
+  "download": "https://github.com/BigJohnMoss/BJMFoundryMods/releases/latest"
 }
