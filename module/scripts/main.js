@@ -18,20 +18,25 @@ Hooks.once('init', () => {
     }
   });
 
-  Hooks.on('sidebar', (app, html) => {
+  Hooks.on('renderSidebarTab', (app, html) => {
+    console.log("we hit the render sidebar tab----------------------------------------------------------------------");
     // Check if the tab being rendered is the Actors Directory
     if (app.options.id === "actors") {
-      // Create a new button element
-      const button = $(`<button class="my-module-button"><i class="fas fa-plus"></i> My Button</button>`);
-      
-      // Add a click listener to the button
-      button.on('click', () => {
-        // Add your desired functionality here
-        ui.notifications.info("My Button was clicked!");
-      });
+      // Ensure the button is not added multiple times
+      if (html.find('.my-module-button').length === 0) {
+        // Create a new button element
+        const button = $(`<button class="my-module-button"><i class="fas fa-plus"></i> My Button</button>`);
+        
+        // Add a click listener to the button
+        button.on('click', () => {
+          // Add your desired functionality here
+          ui.notifications.info("My Button was clicked!");
+        });
   
-      // Append the button to the sidebar header
-      const header = html.find('.directory-header');
-      header.append(button);
+        // Append the button to the sidebar header
+        const header = html.find('.directory-header');
+        header.append(button);
+      }
     }
   });
+  

@@ -6,48 +6,23 @@
     padding: 20px;
   }
 
-  .gm-scene-updater {
-    padding: 20px;
-    background-color: #f4f4f4;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    width: 400px;
-    margin: 20px auto;
-}
-
-.gm-scene-updater h2 {
-    text-align: center;
-}
-
-.gm-scene-updater .form-group {
-    margin-bottom: 15px;
-}
-
-.gm-scene-updater label {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 5px;
-}
-
-.gm-scene-updater input,
-.gm-scene-updater textarea {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 3px;
-}
-
-.gm-scene-updater button {
-    display: block;
-    width: 100%;
-    padding: 10px;
+  .my-module-button {
     background-color: #007bff;
-    color: #fff;
+    color: white;
     border: none;
-    border-radius: 3px;
+    border-radius: 5px;
+    padding: 8px 12px;
+    font-size: 14px;
     cursor: pointer;
-}
-
-.gm-scene-updater button:hover {
+    display: inline-flex;
+    align-items: center;
+  }
+  
+  .my-module-button:hover {
     background-color: #0056b3;
-}
+  }
+  
+  .my-module-button i {
+    margin-right: 5px;
+  }
+  
