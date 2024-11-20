@@ -59,16 +59,16 @@ Hooks.on("getSceneControlButtons", (controls) => {
 
   // Add a new control for GMs
   if (game.user.isGM) {
-      controls.push({
-          name: "scene-updater",
-          title: "Scene Updater",
-          icon: "fas fa-pencil-alt",
-          layer: "controls", // Optional: Specify the layer
-          tools: [], // Even if not used, ensure "tools" exists
-          onClick: () => {
-              new SceneUpdater().render(true);
-          },
-          button: true,
-      });
+    controls.push({
+      name: "scene-updater",
+      title: "Open Scene Updater",
+      icon: "fas fa-pencil-alt",
+      layer: "controls", // Optional: Specify the layer
+      onClick: () => {
+          new SceneUpdater().render(true);
+      },
+      button: true,
+  });
+  
   }
 });
