@@ -1,16 +1,33 @@
 {
-  "name": "waitscreenupgrademodule",
-  "title": "Wait Screen Upgrade Module",
-  "description": "A module to enhance the wait screen experience.",
-  "author": "BigJohnMoss",
+  "id": "waitscreenupgrademodule",
+  "title": "WaitScreenUpgradeModule",
   "version": "1.0.0",
-  "minimumCoreVersion": "11",
-  "compatibleCoreVersion": "12",
-  "scripts": ["scripts/main.js"],
-  "styles": ["styles/style.css"],
-  "languages": [],
-  "packs": [],
-  "url": "https://github.com/BigJohnMoss/BJMFoundryMods.git",
+  "compatibility": {
+    "minimum": "11",
+    "verified": "12"
+  },
+  "description": "A module to enhance the wait screen experience.",
+  "authors": [
+    {
+      "name": "Author 1",
+      "flags": {}
+    }
+  ],
   "manifest": "https://github.com/BigJohnMoss/BJMFoundryMods/waitscreenupgrademodule.json",
-  "download": "https://github.com/BigJohnMoss/BJMFoundryMods/releases/latest"
+  "download": "https://github.com/BigJohnMoss/BJMFoundryMods/releases/latest",
+  "url": "https://github.com/BigJohnMoss/BJMFoundryMods.git",
+  "packs": [
+    {
+      "name": "pack-1",
+      "label": "Pack 1",
+      "path": "packs/pack-1",
+      "type": "JournalEntry",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      }
+    }
+  ],
+  "scripts": ["scripts/main.js"],
+  "styles": ["styles/style.css"] 
 }
