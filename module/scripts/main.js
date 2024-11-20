@@ -55,6 +55,7 @@ Hooks.once('init', () => {
 
 // Add a button to the game settings for the GM to open this page
 Hooks.on("getSceneControlButtons", (controls) => {
+  console.log("Adding Scene Updater button to scene controls");
   // Only add the button for GMs
   if (!game.user.isGM) return;
 
