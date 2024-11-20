@@ -3,8 +3,8 @@ Setting up a module for Foundary to upgrade the wait screen.
 Important notes:
 Use a Separate Module Workspace: Develop your module in a standalone project folder and copy it to Data/modules when ready to test in Foundry.
 
-WaitScreenUpgradeModule/
-├── waitscreenupgrademodule.json
+Module/
+├── module.json
 ├── package-lock.json
 ├── package.json
 ├── scripts/
@@ -12,7 +12,9 @@ WaitScreenUpgradeModule/
 ├── styles/
 │   └── style.css
 └── templates/
-    └── waitscreenupgrademodule.html
+    └── waitscreen-upgrademodule.html
+
+    When making updates - make sure to update the version number otherwise foundry wont see it
 
 The Aim:
 
