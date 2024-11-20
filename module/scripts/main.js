@@ -33,17 +33,22 @@ Hooks.once('init', () => {
   }
 
   Hooks.on('getSceneControlButtons', (controls) => {
-    controls.push({
-      name: "wait-screen-shop",
-      title: "Wait Screen Shop",
-      icon: "fas fa-shopping-cart", // Icon for the button
-      layer: "controls",
-      visible: game.user.isGM, // Make it visible only for GMs (optional)
-      onClick: () => {
-        // Open the custom pop-up when clicked
-        new WaitScreenShopApp().render(true);
-      },
-      button: true
-    });
+    // Add a new toolset or find an existing one to append your button
+    let tokenControls = controls.find((control) => control.name === "token");
+  
+    // If "token" controls exist, append the button to it
+    if (tokenControls) {
+      tokenControls.tools.push({
+        name: "wait-screen-shop",
+        title: "Wait Screen Shop",
+        icon: "fas fa-shopping-cart", // Icon for the button
+        onClick: () => {
+          // Open the custom pop-up when clicked
+          new WaitScreenShopApp().render(true);
+        },
+        visible: true
+      });
+    }
   });
+  
   
