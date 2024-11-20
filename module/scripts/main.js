@@ -3,7 +3,7 @@ console.log('module | Main.js is loaded and running');
   // Initialization hook
 Hooks.once('init', () => {
     console.log("module | Initialized template");
-    loadTemplates(["module/templates/wait-screen-shop.html"]);
+    loadTemplates(["modules/module/templates/wait-screen-shop.html"]);
   });
   
   // Ready hook
@@ -17,7 +17,7 @@ Hooks.once('init', () => {
       return mergeObject(super.defaultOptions, {
         id: "wait-screen-shop",
         title: "Wait Screen Shop",
-        template: "modules/your-module-name/templates/wait-screen-shop.html", // Path to your HTML template
+        template: "modules/module/templates/wait-screen-shop.html", // Path to your HTML template
         width: 400,
         height: 300,
         resizable: true
