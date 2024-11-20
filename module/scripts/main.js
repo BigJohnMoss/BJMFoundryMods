@@ -2,10 +2,7 @@ console.log("Main.js is loaded and running");
 console.log('module | Main.js is loaded and running');
   // Initialization hook
 Hooks.once('init', () => {
-    console.log("module | Initialized");
-  });
-
-  Hooks.once("init", () => {
+    console.log("module | Initialized template");
     loadTemplates(["module/templates/wait-screen-shop.html"]);
   });
   
@@ -13,13 +10,6 @@ Hooks.once('init', () => {
   Hooks.on('ready', () => {
     console.log("module | Ready");
     ui.notifications.info("Welcome to the upgraded wait screen!");
-  });
-  
-  // Example: Display a custom message on the canvas
-  Hooks.on('canvasReady', (canvas) => {
-    if (canvas.scene) {
-      console.log(`module | Scene Loaded: ${canvas.scene.name}`);
-    }
   });
 
   class WaitScreenShopApp extends Application {
