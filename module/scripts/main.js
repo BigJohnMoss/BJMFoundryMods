@@ -16,5 +16,57 @@ Hooks.once('init', () => {
       console.log(`Wait Screen Upgrade Module | Scene Loaded: ${canvas.scene.name}`);
     }
   });
+
+  class SceneUpdater extends FormApplication {
+    static get defaultOptions() {
+        return mergeObject(super.defaultOptions, {
+            title: "Scene Updater",
+            id: "scene-updater",
+            template: "modules/module/templates/gm-scene-updater.html",
+            width: 400,
+        });
+    }
+
+    // Provide default data for the form
+    getData() {
+        const scene = game.scenes.active;
+        return {
+            name: scene?.name || "",
+            description: scene?.data?.description || "",
+        };
+    }
+
+    // Handle form submission
+    async _updateObject(event, formData) {
+        const scene = game.scenes.active;
+        if (!scene) {
+            ui.notifications.error("No active scene to update.");
+            return;
+        }
+
+        await scene.update({
+            name: formData["scene-name"],
+            description: formData["scene-description"],
+        });
+
+        ui.notifications.info("Scene updated successfully!");
+    }
+}
+
+// Add a button to the game settings for the GM to open this page
+Hooks.on("getSceneControlButtons", (controls) => {
+    if (!game.user.isGM) return;
+
+    controls.push({
+        name: "scene-updater",
+        title: "Open Scene Updater",
+        icon: "fas fa-pencil-alt",
+        onClick: () => {
+            new SceneUpdater().render(true);
+        },
+        button: true,
+    });
+});
+
   
   
