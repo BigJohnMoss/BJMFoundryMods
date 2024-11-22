@@ -48,13 +48,16 @@ Hooks.on('getSceneControlButtons', (controls) => {
             title: "Wait Screen Shop",
             icon: "fas fa-shopping-cart", // Icon for the button
             onClick: () => {
-                // Check if the app instance exists and is rendered
+                // Check if the app instance exists
                 if (!waitScreenShopApp) {
                     // Create a new instance if it doesn't exist
                     waitScreenShopApp = new WaitScreenShopApp();
                 }
-                if (waitScreenShopApp.rendered) {
-                    // If the app is already rendered, bring it to the front
+
+                // Check if the application is rendered (exists in the DOM)
+                const appElement = document.getElementById("wait-screen-shop");
+                if (appElement) {
+                    // If already rendered, bring to top
                     waitScreenShopApp.bringToTop();
                 } else {
                     // Render the app
