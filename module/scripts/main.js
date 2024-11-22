@@ -56,39 +56,40 @@ class WaitScreenShopApp extends Application {
           ui.notifications.error("No active scene found.");
           return;
       }
-
-        let backgroundUrl;
-        switch (option) {
-            case "Paul":
-                backgroundUrl = "modules/module/images/Paul.jpg";
-                break;
-            case "Thomas":
-                backgroundUrl = "modules/module/images/Thomas.jpg";
-                break;
-            case "Erik":
-                backgroundUrl = "modules/module/images/Erik.jpg";
-                break;
-            case "Liam":
-                backgroundUrl = "modules/module/images/Liam.jpg";
-                break;
-            case "Richard":
-                backgroundUrl = "modules/module/images/Richard.jpg";
-                break;
-            default:
-                backgroundUrl = null;
-        }
-
-       // Update the scene's background image
-    scene.update({ "background.img": backgroundUrl })
-    .then(() => {
-        ui.notifications.info(`Scene background changed to ${option}!`);
-    })
-    .catch((err) => {
-        console.error(err);
-        ui.notifications.error("Failed to update scene background.");
-    });
-    
-    }
+  
+      let backgroundUrl;
+      switch (option) {
+          case "Paul":
+              backgroundUrl = "modules/module/images/Paul.jpg";
+              break;
+          case "Thomas":
+              backgroundUrl = "modules/module/images/Thomas.jpg";
+              break;
+          case "Erik":
+              backgroundUrl = "modules/module/images/Erik.jpg";
+              break;
+          case "Liam":
+              backgroundUrl = "modules/module/images/Liam.jpg";
+              break;
+          case "Richard":
+              backgroundUrl = "modules/module/images/Richard.jpg";
+              break;
+          default:
+              ui.notifications.warn("Invalid option selected.");
+              return;
+      }
+  
+      // Update the scene's background image
+      scene.update({ "background.src": backgroundUrl })
+          .then(() => {
+              ui.notifications.info(`Scene background updated to ${option}!`);
+          })
+          .catch((err) => {
+              console.error(err);
+              ui.notifications.error("Failed to update scene background.");
+          });
+  }
+  
 }
 
 // Persistent reference to the app instance
