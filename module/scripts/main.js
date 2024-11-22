@@ -51,8 +51,11 @@ class WaitScreenShopApp extends Application {
     }
 
     changeBackground(option) {
-        const appElement = document.getElementById("wait-screen-shop");
-        if (!appElement) return;
+      const scene = game.scenes.active; // Get the active scene
+      if (!scene) {
+          ui.notifications.error("No active scene found.");
+          return;
+      }
 
         let backgroundUrl;
         switch (option) {
@@ -75,12 +78,16 @@ class WaitScreenShopApp extends Application {
                 backgroundUrl = null;
         }
 
-        if (backgroundUrl) {
-            appElement.style.backgroundImage = `url(${backgroundUrl})`;
-            appElement.style.backgroundSize = "cover";
-            appElement.style.backgroundPosition = "center";
-            ui.notifications.info(`Background changed to ${option}!`);
-        }
+       // Update the scene's background image
+    scene.update({ "background.img": backgroundUrl })
+    .then(() => {
+        ui.notifications.info(`Scene background changed to ${option}!`);
+    })
+    .catch((err) => {
+        console.error(err);
+        ui.notifications.error("Failed to update scene background.");
+    });
+    
     }
 }
 
