@@ -43,26 +43,27 @@
   }
   
   .shop-dropdown select {
-    width: 100%; /* Full width for consistency */
-    padding: 10px; /* Ensure sufficient padding */
-    font-size: 1rem; /* Adjust font size for readability */
-    line-height: 1.5; /* Ensure enough line height */
+    width: 100%; /* Full width for the dropdown */
+    padding: 10px; /* Space around the text */
+    font-size: 1rem; /* Ensure text is readable */
+    line-height: normal; /* Use normal line-height for dropdowns */
     border-radius: 5px; /* Rounded corners */
-    border: 1px solid #ccc; /* Define a border */
+    border: 1px solid #ccc; /* Visible border */
     background-color: #fff; /* Background color for contrast */
     cursor: pointer; /* Pointer for better UX */
-    box-sizing: border-box; /* Ensure padding doesn't affect dimensions */
+    box-sizing: border-box; /* Include padding and borders in element size */
+    appearance: none; /* Ensure consistent styling across browsers */
+  }
+  
+  .shop-dropdown option {
+    font-size: 1rem; /* Match dropdown text size */
+    padding: 5px; /* Add padding for spacing */
+    line-height: 1.5; /* Ensure enough space between lines */
   }
   
   .shop-dropdown select:focus {
     border-color: #007bff; /* Highlight border on focus */
     outline: none; /* Remove default outline */
-  }
-  
-  .shop-dropdown option {
-    font-size: 1rem; /* Match font size of the dropdown */
-    line-height: 1.5; /* Consistent line height */
-    padding: 5px; /* Padding inside options */
   }
   
   .shop-buttons {
