@@ -1,22 +1,64 @@
 <div class="wait-screen-shop">
-    <div class="shop-header">
-      <h2>Welcome to the Wait Screen Shop!</h2>
+  <div class="shop-header">
+    <h2>Welcome to the Wait Screen Shop!</h2>
+  </div>
+  <p class="shop-description">What background will you pick?</p>
+
+  <!-- Tabs for categories -->
+  <div class="shop-tabs">
+    <button class="tab-link active" data-tab="background">Backgrounds</button>
+    <button class="tab-link" data-tab="furniture">Furniture</button>
+    <button class="tab-link" data-tab="decorations">Decorations</button>
+    <button class="tab-link" data-tab="miscellaneous">Miscellaneous</button>
+  </div>
+
+  <!-- Tab content -->
+  <div class="tab-content">
+    <!-- Backgrounds Tab -->
+    <div id="background" class="tab-panel active">
+      <div class="shop-dropdown">
+        <label for="shop-options">Choose a background option:</label>
+        <select id="shop-options" class="dropdown">
+          <option value="" disabled selected>Select an option</option>
+          <option value="Paul">Paul</option>
+          <option value="Thomas">Thomas</option>
+          <option value="Richard">Richard</option>
+          <option value="Erik">Erik</option>
+          <option value="Liam">Liam</option>
+        </select>
+      </div>
+      <div class="shop-buttons">
+        <button id="confirm-button" class="shop-button primary">Confirm</button>
+        <button id="cancel-button" class="shop-button secondary">Cancel</button>
+      </div>
     </div>
-    <p class="shop-description">What background will you pick?</p>
-    <div class="shop-dropdown">
-      <label for="shop-options">Choose an option:</label>
-      <select id="shop-options" class="dropdown">
-        <option value="" disabled selected>Select an option</option>
-        <option value="Paul">Paul</option>
-        <option value="Thomas">Thomas</option>
-        <option value="Richard">Richard</option>
-        <option value="Erik">Erik</option>
-        <option value="Liam">Liam</option>
-      </select>
+
+    <!-- Furniture Tab -->
+    <div id="furniture" class="tab-panel">
+      <h3>Furniture</h3>
+      <ul>
+        <li>Tables</li>
+        <li>Chairs</li>
+      </ul>
     </div>
-    <div class="shop-buttons">
-      <button id="confirm-button" class="shop-button primary">Confirm</button>
-      <button id="cancel-button" class="shop-button secondary">Cancel</button>
+
+    <!-- Decorations Tab -->
+    <div id="decorations" class="tab-panel">
+      <h3>Decorations</h3>
+      <ul>
+        <li>Picture Frames</li>
+        <li>Gunsmoke's Hat</li>
+      </ul>
+    </div>
+
+    <!-- Miscellaneous Tab -->
+    <div id="miscellaneous" class="tab-panel">
+      <h3>Miscellaneous</h3>
+      <ul>
+        <li>Remove Bullet Holes</li>
+        <li>Add more Bullet Holes</li>
+        <li>Replace Wanted Posters</li>
+      </ul>
     </div>
   </div>
-  
+</div>

@@ -1,102 +1,164 @@
+/* General styles */
 .wait-screen {
-    background-color: #333;
-    color: white;
-    font-size: 1.5em;
-    text-align: center;
-    padding: 20px;
-  }
+  background-color: #333;
+  color: white;
+  font-size: 1.5em;
+  text-align: center;
+  padding: 20px;
+}
 
-  .wait-screen-shop {
-    font-family: 'Arial', sans-serif;
-    background-color: #f9f9f9;
-    border: 2px solid #ccc;
-    border-radius: 8px;
-    width: 350px;
-    padding: 20px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-    text-align: center;
-  }
-  
-  .shop-header h2 {
-    font-size: 1.5rem;
-    margin: 0;
-    color: #333;
-    margin-bottom: 15px;
-  }
-  
-  .shop-description {
-    font-size: 1rem;
-    color: #555;
-    margin-bottom: 20px;
-  }
-  
-  .shop-dropdown {
-    margin-bottom: 20px;
-    text-align: left;
-  }
-  
-  .shop-dropdown label {
-    display: block;
-    font-size: 1rem;
-    color: #333;
-    margin-bottom: 5px;
-  }
-  
-  .shop-dropdown select {
-    width: 100%; /* Full width for the dropdown */
-    padding: 10px; /* Space around the text */
-    font-size: 1rem; /* Ensure text is readable */
-    line-height: normal; /* Use normal line-height for dropdowns */
-    border-radius: 5px; /* Rounded corners */
-    border: 1px solid #ccc; /* Visible border */
-    background-color: #fff; /* Background color for contrast */
-    cursor: pointer; /* Pointer for better UX */
-    box-sizing: border-box; /* Include padding and borders in element size */
-    appearance: none; /* Ensure consistent styling across browsers */
-  }
-  
-  .shop-dropdown option {
-    font-size: 1rem; /* Match dropdown text size */
-    padding: 5px; /* Add padding for spacing */
-    line-height: 1.5; /* Ensure enough space between lines */
-  }
-  
-  .shop-dropdown select:focus {
-    border-color: #007bff; /* Highlight border on focus */
-    outline: none; /* Remove default outline */
-  }
-  
-  .shop-buttons {
-    display: flex;
-    justify-content: space-around;
-  }
-  
-  .shop-button {
-    padding: 10px 20px;
-    font-size: 1rem;
-    border-radius: 5px;
-    border: none;
-    cursor: pointer;
-  }
-  
-  .shop-button.primary {
-    background-color: #007bff;
-    color: white;
-    border: 1px solid #0056b3;
-  }
-  
-  .shop-button.primary:hover {
-    background-color: #0056b3;
-  }
-  
-  .shop-button.secondary {
-    background-color: #f8f9fa;
-    color: #333;
-    border: 1px solid #ccc;
-  }
-  
-  .shop-button.secondary:hover {
-    background-color: #e2e6ea;
-  }
-  
-  
+/* Main container styles */
+.wait-screen-shop {
+  font-family: 'Arial', sans-serif;
+  background-color: #f9f9f9;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  width: 350px;
+  padding: 20px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+/* Header styles */
+.shop-header h2 {
+  font-size: 1.5rem;
+  margin: 0;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+/* Description text */
+.shop-description {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+/* Dropdown styles */
+.shop-dropdown {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.shop-dropdown label {
+  display: block;
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.shop-dropdown select {
+  width: 100%; /* Full width for the dropdown */
+  padding: 10px;
+  font-size: 1rem;
+  line-height: normal;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  cursor: pointer;
+  box-sizing: border-box;
+  appearance: none;
+}
+
+.shop-dropdown option {
+  font-size: 1rem;
+  padding: 5px;
+  line-height: 1.5;
+}
+
+.shop-dropdown select:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+/* Buttons */
+.shop-buttons {
+  display: flex;
+  justify-content: space-around;
+}
+
+.shop-button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+.shop-button.primary {
+  background-color: #007bff;
+  color: white;
+  border: 1px solid #0056b3;
+}
+
+.shop-button.primary:hover {
+  background-color: #0056b3;
+}
+
+.shop-button.secondary {
+  background-color: #f8f9fa;
+  color: #333;
+  border: 1px solid #ccc;
+}
+
+.shop-button.secondary:hover {
+  background-color: #e2e6ea;
+}
+
+/* Tabs styling */
+.shop-tabs {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.tab-link {
+  padding: 10px 20px;
+  background-color: #f0f0f0;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  text-align: center;
+}
+
+.tab-link.active {
+  background-color: #007bff;
+  color: white;
+}
+
+.tab-link:hover {
+  background-color: #0056b3;
+  color: white;
+}
+
+/* Tab content styling */
+.tab-content {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 20px;
+  background-color: #f9f9f9;
+}
+
+.tab-panel {
+  display: none;
+}
+
+.tab-panel.active {
+  display: block;
+}
+
+.tab-panel h3 {
+  margin-top: 0;
+}
+
+.tab-panel ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.tab-panel li {
+  padding: 5px 0;
+  font-size: 1rem;
+  color: #333;
+}

@@ -27,12 +27,12 @@ class WaitScreenShopApp extends Application {
 
     activateListeners(html) {
         super.activateListeners(html);
-
+    
         // Dropdown and buttons
         const dropdown = html.find("#shop-options");
         const confirmButton = html.find("#confirm-button");
         const cancelButton = html.find("#cancel-button");
-
+    
         // Event listener for Confirm button
         confirmButton.on("click", () => {
             const selectedOption = dropdown.val();
@@ -43,53 +43,68 @@ class WaitScreenShopApp extends Application {
             // Change the background based on the selected option
             this.changeBackground(selectedOption);
         });
-
+    
         // Event listener for Cancel button
         cancelButton.on("click", () => {
             ui.notifications.info("Selection canceled.");
         });
-    }
+    
+        // Tab functionality
+        const tabs = html.find(".tab-link");
+        const panels = html.find(".tab-panel");
+    
+        tabs.on("click", function () {
+            const tabId = $(this).data("tab");
+    
+            // Update active tab
+            tabs.removeClass("active");
+            $(this).addClass("active");
+    
+            // Show the correct tab panel
+            panels.removeClass("active");
+            html.find(`#${tabId}`).addClass("active");
+        });
+    }    
 
     changeBackground(option) {
-      const scene = game.scenes.active; // Get the active scene
-      if (!scene) {
-          ui.notifications.error("No active scene found.");
-          return;
-      }
-  
-      let backgroundUrl;
-      switch (option) {
-          case "Paul":
-              backgroundUrl = "modules/module/images/Paul.jpg";
-              break;
-          case "Thomas":
-              backgroundUrl = "modules/module/images/Thomas.jpg";
-              break;
-          case "Erik":
-              backgroundUrl = "modules/module/images/Erik.jpg";
-              break;
-          case "Liam":
-              backgroundUrl = "modules/module/images/Liam.jpg";
-              break;
-          case "Richard":
-              backgroundUrl = "modules/module/images/Richard.jpg";
-              break;
-          default:
-              ui.notifications.warn("Invalid option selected.");
-              return;
-      }
-  
-      // Update the scene's background image
-      scene.update({ "background.src": backgroundUrl })
-          .then(() => {
-              ui.notifications.info(`Scene background updated to ${option}!`);
-          })
-          .catch((err) => {
-              console.error(err);
-              ui.notifications.error("Failed to update scene background.");
-          });
-  }
-  
+        const scene = game.scenes.active; // Get the active scene
+        if (!scene) {
+            ui.notifications.error("No active scene found.");
+            return;
+        }
+
+        let backgroundUrl;
+        switch (option) {
+            case "Paul":
+                backgroundUrl = "modules/module/images/Paul.jpg";
+                break;
+            case "Thomas":
+                backgroundUrl = "modules/module/images/Thomas.jpg";
+                break;
+            case "Erik":
+                backgroundUrl = "modules/module/images/Erik.jpg";
+                break;
+            case "Liam":
+                backgroundUrl = "modules/module/images/Liam.jpg";
+                break;
+            case "Richard":
+                backgroundUrl = "modules/module/images/Richard.jpg";
+                break;
+            default:
+                ui.notifications.warn("Invalid option selected.");
+                return;
+        }
+
+        // Update the scene's background image
+        scene.update({ "background.src": backgroundUrl })
+            .then(() => {
+                ui.notifications.info(`Scene background updated to ${option}!`);
+            })
+            .catch((err) => {
+                console.error(err);
+                ui.notifications.error("Failed to update scene background.");
+            });
+    }
 }
 
 // Persistent reference to the app instance
